@@ -1,16 +1,19 @@
-const express = require('express');
-const cors = require('cors');
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-const mammoth = require('mammoth');
-const bodyParser = require('body-parser');
+import express from 'express';
+import cors from 'cors';
+import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
+import mammoth from 'mammoth';
+import bodyParser from 'body-parser';
 
 const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ['https://muhammadqodir1313.github.io', 'http://localhost:5173'],
+    credentials: true
+}));
 app.use(bodyParser.json());
 
 // Fayl yuklash uchun konfiguratsiya

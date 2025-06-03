@@ -16,14 +16,14 @@
     "concurrently": "^8.2.2"
   },
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "build": "cd client && npm run build",
+    "deploy": "cd client && npm run deploy"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "concurrently": "^8.2.2"
   }
 }
