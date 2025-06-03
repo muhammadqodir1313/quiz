@@ -6,6 +6,12 @@ import fs from 'fs';
 import mammoth from 'mammoth';
 import bodyParser from 'body-parser';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
 const port = process.env.PORT || 5001;
 
