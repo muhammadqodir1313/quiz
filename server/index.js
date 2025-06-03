@@ -127,6 +127,11 @@ app.get('/api/quiz', (req, res) => {
   }
 });
 
+// Render uchun health check endpointi
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 app.listen(port, () => {
   console.log(`Server ${port} portda ishga tushdi`);
 }); 
