@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import config from '../config';
 
 const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -42,7 +43,7 @@ const QuizPage = () => {
 
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/quiz');
+      const response = await axios.get(`${config.API_URL}/api/quiz`);
       setQuestions(response.data);
       setLoading(false);
     } catch (error) {
