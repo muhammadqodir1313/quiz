@@ -10,10 +10,7 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors({
-    origin: ['https://muhammadqodir1313.github.io', 'http://localhost:5173'],
-    credentials: true
-}));
+app.use(cors());
 app.use(bodyParser.json());
 
 // Fayl yuklash uchun konfiguratsiya
